@@ -53,10 +53,22 @@ class AddressAutocomplete: NSObject, MKLocalSearchCompleterDelegate {
                 let item = items[0]
                 
                 let details:[String: Any] = [
-                    "title": item.placemark.title! as String,
-                    "coordinate": [
-                        "longitude": item.placemark.coordinate.longitude as Double,
-                        "latitude": item.placemark.coordinate.latitude as Double
+                    "placemark": [
+                        "region": item.placemark.region,
+                        "postalCode": item.placemark.postalCode,
+                        "countryCode": item.placemark.countryCode,
+                        "title": item.placemark.title,
+                        "subtitle": item.placemark.subtitle,
+                        "isoCountryCode": item.placemark.isoCountryCode,
+                        "subLocality": item.placemark.subLocality,
+                        "locality": item.placemark.locality,
+                        "subAdministrativeArea": item.placemark.subAdministrativeArea,
+                        "thoroughfare": item.placemark.thoroughfare,
+                        "administrativeArea": item.placemark.administrativeArea,
+                        "areasOfInterest": item.placemark.areasOfInterest,
+                        
+                        "latitude": item.placemark.location?.coordinate.latitude as Double?,
+                        "longitude": item.placemark.location?.coordinate.longitude as Double?,
                     ],
                     "region": [
                         "longitude": response.boundingRegion.center.longitude as Double,
