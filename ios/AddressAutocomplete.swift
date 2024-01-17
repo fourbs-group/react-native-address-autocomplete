@@ -66,6 +66,7 @@ class AddressAutocomplete: NSObject, MKLocalSearchCompleterDelegate {
                         "thoroughfare": item.placemark.thoroughfare,
                         "administrativeArea": item.placemark.administrativeArea,
                         "areasOfInterest": item.placemark.areasOfInterest,
+                        "name": item.placemark.name,
                         
                         "latitude": item.placemark.location?.coordinate.latitude as Double?,
                         "longitude": item.placemark.location?.coordinate.longitude as Double?,
